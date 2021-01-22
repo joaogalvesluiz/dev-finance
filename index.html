@@ -4,41 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
     <header>
-      <h1 id="logo">dev.finance$</h1>
+      <img src="./assets/images/logo.svg" alt="Logo Dev Finance" />
     </header>
 
     <main class="container">
       <section id="balance">
-        <h2>Balanço</h2>
+        <h2 class="sr-only">Balanço</h2>
 
         <div class="card">
-          <h3>Entradas</h3>
+          <h3>
+            <span>Entradas</span>
+            <img src="./assets/images/income.svg" alt="Imagem de Entradas" />
+          </h3>
           <p>R$ 5.000,00</p>
         </div>
 
         <div class="card">
-          <h3>Saídas</h3>
+          <h3>
+            <span>Saídas</span>
+            <img src="./assets/images/expense.svg" alt="Imagem de Saida" />
+          </h3>
           <p>R$ 2.000,00</p>
         </div>
 
         <div class="card total">
-          <h3>Total</h3>
+          <h3>
+            <span>Total</span>
+            <img src="./assets/images/total.svg" alt="Imagem de Total" />
+          </h3>
           <p>R$ 3.000,00</p>
         </div>
       </section>
 
       <section id="transaction">
-        <h2>Transações</h2>
+        <h2 class="sr-only">Transações</h2>
+
+        <a href="#" onclick="Modal.open()" class="button new">+ Nova Transação</a>
+
         <table id="data-table">
           <thead>
             <tr>
               <th>Descrição</th>
               <th>Valor</th>
               <th>Data</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -46,16 +59,19 @@
               <td class="description">Luz</td>
               <td class="expensive">- R$ 500,00</td>
               <td class="date">23/01/2021</td>
+              <td><img src="./assets/images/minus.svg" alt="Menos" /></td>
             </tr>
             <tr>
               <td class="description">Criação de Website</td>
               <td class="income">R$ 5000,00</td>
               <td class="date">23/01/2021</td>
+              <td><img src="./assets/images/minus.svg" alt="Menos" /></td>
             </tr>
             <tr>
               <td class="description">Internet</td>
               <td class="expensive">- R$ 200,00</td>
               <td class="date">23/01/2021</td>
+              <td><img src="./assets/images/minus.svg" alt="Menos" /></td>
             </tr>
           </tbody>
         </table>
@@ -64,5 +80,52 @@
     <footer>
       <p>dev.finance$</p>
     </footer>
+
+    <div class="modal-overlay ">
+      <div class="modal">
+        <div class="form">
+          <h2>Nova Transação</h2>
+
+          <form action="">
+            <div class="input-group">
+              <label class="sr-only" for="description">Descrição</label>
+              <input type="text" 
+              id="description"
+              name="description"
+              placeholder="Descrição"
+              />
+            </div>
+            <div class="input-group">
+              <label class="sr-only" for="amount">quantidade</label>
+              <input type="number" 
+              id="amount"
+              name="amount"
+              step="0.1"
+              placeholder="0,00"
+              />
+              
+              <small class="help">
+                Use o sinal - (negativo) para despesas
+                e , (vírgula) para casas decimais
+              </small>
+            </div>
+            <div class="input-group">
+              <label class="sr-only" for="amount">Data</label>
+              <input type="date" 
+              id="date"
+              name="date"
+              />
+            </div>
+
+            <div class="input-group actions">
+              <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
+              <button type="submit">Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
