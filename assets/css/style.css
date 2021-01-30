@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,700;1,100;1,300;1,400&display=swap');
 
 :root {
-  --dark-blue: #363f5f;
+  --bg: #f0f2f5;
+  --bg-header: #2D4a22;
   --total: #49AA26;
+  --bg-card: white;
   --light-green: #3dd705;
   --red: #e92929;
+  --positive: #12a454;
+  --negative: #e92929; 
+  --dark-blue: #363f5f;
 }
 
 * {
@@ -18,7 +23,7 @@ html {
 }
 
 body { 
-  background: #f0f2f5;
+  background: var(--bg);
   font-family: 'Poppins', sans-serif;
 }
 
@@ -96,7 +101,7 @@ button:hover {
 /* Header */
 
 header {
-  background: #2D4a22;
+  background: var(--bg-header);
   padding: 2rem 0 10rem;
   text-align: center;
 }
@@ -119,7 +124,7 @@ header {
 /* Cards */
 
 .card {
-  background: white;
+  background: var(--bg-card);
   padding: 1.5rem 2rem;
   border-radius: 0.25rem;
   margin-bottom: 2rem;
@@ -193,11 +198,11 @@ td.description {
 }
 
 td.income {
-  color: #12a454;
+  color:var(--positive);
 }
 
 td.expensive {
-  color: #e92929;
+  color: var(--negative);
 }
 
 /* Modal */
@@ -246,7 +251,7 @@ input {
   margin-top: 0.8rem;
 }
 
-.input-group small {
+.input-group .help {
   opacity: 0.4;
 }
 
